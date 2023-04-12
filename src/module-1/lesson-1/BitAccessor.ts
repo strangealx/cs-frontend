@@ -1,4 +1,4 @@
-import { Bit } from '../../types'
+import { Bit } from './types'
 import { BitGetter } from './BitGetter'
 
 export class BitAccessor extends BitGetter {

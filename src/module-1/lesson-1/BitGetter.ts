@@ -1,4 +1,4 @@
-import { Bit } from '../../types'
+import { Bit } from './types'
 
 export class BitGetter {
   constructor(protected bytes: Uint8Array) {
