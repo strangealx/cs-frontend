@@ -1,2 +1,5 @@
 export * from './getImageData'
 export * from './forEachPixel'
+export * from './numberToBits'
+export * from './stringToBits'
+export * from './binaryToString'
