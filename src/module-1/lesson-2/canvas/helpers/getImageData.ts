@@ -7,12 +7,12 @@ export const getImageData = (image: ImageSource) => {
     return getImageDataFromUrl(image)
   }
 
-  if (image instanceof ImageData) {
-    return Promise.resolve(image)
-  }
-
   if (image instanceof HTMLCanvasElement) {
     return getImageDataFromCanvas(image)
+  }
+
+  if (image instanceof ImageData) {
+    return Promise.resolve(image)
   }
 
   return image

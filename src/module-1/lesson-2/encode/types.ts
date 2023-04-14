@@ -1,5 +1,3 @@
-export type ImageSource = string | HTMLCanvasElement | ImageData | Promise<ImageData>
-
 export type SchemaType = 'number' | 'ascii' | 'boolean'
 export type SchemaItem = [number, SchemaType]
 export type Schema = Array<SchemaItem>
