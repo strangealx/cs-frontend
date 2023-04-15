@@ -28,13 +28,7 @@ describe('encode', () => {
     expect(output.byteLength).toBe(Math.ceil(schemaBitsSum / BITS_PER_BYTE))
   })
 
-  test('should throw on schema-invalid value', () => {
-    const input: ValueList = [1, 2, 'abc', false, true]
-
-    expect(() => encode(input, schema)).toThrowError('Can\'t put 24 bits into 16-bits schema-cell')
-  })
-
-  test('should encode string correctly for more bits in schema', () => {
+  test('should encode string when bits count greater then symbols count', () => {
     const input: ValueList = [1, 2, 'a', false, true]
     schema = [
       [3, 'number'],
@@ -45,6 +39,18 @@ describe('encode', () => {
     ]
     const output = new Uint8Array(encode(input, schema))
 
-    expect(binaryToString(output)).toBe('0010100110000100000100')
+    expect(binaryToString(output)).toBe('001010000000110000101000')
+  })
+
+  test('should throw on value that takes more bits then allowed by schema', () => {
+    const input: ValueList = [1, 2, 'abc', false, true]
+
+    expect(() => encode(input, schema)).toThrowError('Can\'t put 24 bits into 16-bits schema-cell')
+  })
+
+  test('should throw on invalid schema', () => {
+    const input: ValueList = [1, 2, 'abc', true]
+
+    expect(() => encode(input, schema)).toThrowError('Schema and input don\'t match each other')
   })
 })

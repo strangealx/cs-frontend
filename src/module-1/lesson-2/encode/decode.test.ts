@@ -1,4 +1,3 @@
-import { BITS_PER_BYTE } from './consts'
 import { encode } from './encode'
 import { decode } from './decode'
 import { Schema, ValueList } from './types'
@@ -24,5 +23,19 @@ describe('decode', () => {
 
     const decoded = decode(encoded, schema)
     expect(decoded).toEqual(input)
+  })
+
+  test('should decode string correctly when bits count greater then symbols count', () => {
+    const input: ValueList = [1, 2, 'a', false, true]
+    schema = [
+      [3, 'number'],
+      [3, 'number'],
+      [13, 'ascii'],
+      [1, 'boolean'],
+      [1, 'boolean'],
+    ]
+    const output = decode(encode(input, schema), schema)
+
+    expect(output).toEqual(input)
   })
 })
