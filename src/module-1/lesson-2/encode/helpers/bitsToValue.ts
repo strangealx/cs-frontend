@@ -1,4 +1,5 @@
 import { Bit } from '../../../lesson-1/types'
+import { BITS_PER_BYTE } from '../consts'
 import { SchemaType, ValueType } from '../types'
 
 export const bitsToValue = (value: Bit[], schemaType: SchemaType): ValueType => {
@@ -14,7 +15,7 @@ export const bitsToValue = (value: Bit[], schemaType: SchemaType): ValueType => 
 
           carry.current = bit + carry.current
 
-          if (iterationIndex !== 0 && bitIndex % 8 === 0) {
+          if (iterationIndex !== 0 && bitIndex % BITS_PER_BYTE === 0) {
             carry.total = String.fromCharCode(charCode) + carry.total
             carry.current = ''
           }
