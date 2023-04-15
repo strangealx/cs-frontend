@@ -45,12 +45,12 @@ describe('encode', () => {
   test('should throw on value that takes more bits then allowed by schema', () => {
     const input: ValueList = [1, 2, 'abc', false, true]
 
-    expect(() => encode(input, schema)).toThrowError('Can\'t put 24 bits into 16-bits schema-cell')
+    expect(() => encode(input, schema)).toThrowError("Can't put 24 bits into 16-bits schema-cell")
   })
 
   test('should throw on invalid schema', () => {
     const input: ValueList = [1, 2, 'abc', true]
 
-    expect(() => encode(input, schema)).toThrowError('Schema and input don\'t match each other')
+    expect(() => encode(input, schema)).toThrowError("Schema and input don't match each other")
   })
 })

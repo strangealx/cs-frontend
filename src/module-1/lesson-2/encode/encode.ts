@@ -12,7 +12,7 @@ export const encode = (input: ValueList, schema: Schema) => {
   let bitsCounter = 0
 
   if (input.length !== schema.length) {
-    throw new Error('Schema and input don\'t match each other')
+    throw new Error("Schema and input don't match each other")
   }
 
   for (let i = 0; i < input.length; i += 1) {
