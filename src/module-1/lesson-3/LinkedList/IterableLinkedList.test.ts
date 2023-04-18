@@ -15,11 +15,11 @@ describe('LinkedList', () => {
 
   describe('Use', () => {
     let list: IterableLinkedList<number>
-  
+
     beforeEach(() => {
       list = new IterableLinkedList()
     })
-  
+
     test('should iterate over all values', () => {
       const input = [1, 2, 3, 4]
       let index = 0

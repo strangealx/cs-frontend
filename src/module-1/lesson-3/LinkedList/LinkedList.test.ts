@@ -12,11 +12,11 @@ describe('LinkedList', () => {
 
   describe('Use', () => {
     let list: LinkedList<number>
-  
+
     beforeEach(() => {
       list = new LinkedList()
     })
-  
+
     test('should add value', () => {
       const input = 1
 
