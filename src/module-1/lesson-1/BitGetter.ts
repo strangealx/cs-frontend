@@ -1,12 +1,18 @@
 import { Bit } from './types'
 
 export class BitGetter {
-  constructor(protected bytes: Uint8Array) {
+  #bytes: Uint8Array
+
+  constructor(bytes: Uint8Array) {
     if (bytes.length === 0) {
       throw new Error('empty array makes no sense')
     }
 
-    this.bytes = new Uint8Array(bytes)
+    this.#bytes = new Uint8Array(bytes)
+  }
+
+  get bytes() {
+    return this.#bytes
   }
 
   protected assert(byteIndex: number, bitIndex: number) {
