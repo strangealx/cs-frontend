@@ -36,7 +36,7 @@ describe('LinkedList', () => {
       expect(list.first?.next?.value).toBe(input.at(1))
       expect(list.first?.next?.prev?.value).toBe(input.at(0))
     })
-    
+
     test('should remove value', () => {
       const input = [1, 2, 3, 4]
 

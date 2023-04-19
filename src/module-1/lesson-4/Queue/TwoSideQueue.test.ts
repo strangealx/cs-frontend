@@ -19,20 +19,21 @@ describe('Queue', () => {
       queue = new TwoSideQueue()
     })
 
-    test('should push and pop value', () => {
+    test('should push, pop, shift, unshift values', () => {
       const input = [10, 11, 12]
 
-      input.forEach((value) => queue.push(value))
-
-      console.log(dequeue.pop());   // 12
-      console.log(dequeue.shift()); // 11
-      console.log(dequeue.pop());   // 10
-      console.log(dequeue.pop());   // Exception
+      queue.push(input[0])
+      queue.unshift(input[1])
+      queue.push(input[2])
 
       expect(queue.pop()).toBe(input.at(-1))
-      expect(queue.shift()).toBe(input.at(0))
-      expect(queue.pop()).toBe(input.at(1))
+      expect(queue.shift()).toBe(input.at(1))
+      expect(queue.pop()).toBe(input.at(0))
       expect(() => queue.pop()).toThrowError('Queue is empty')
+    })
+
+    test('should throw on tying to shift on empty queue', () => {
+      expect(() => queue.shift()).toThrowError('Queue is empty')
     })
   })
 })
