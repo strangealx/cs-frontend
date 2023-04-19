@@ -9,4 +9,7 @@ export interface ILinkedList<T> {
   last: INode<T> | null
 
   add(value: T): void
+  addFirst(value: T): void
+  remove(): void
+  removeFirst(): void
 }
