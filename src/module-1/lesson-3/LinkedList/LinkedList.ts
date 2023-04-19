@@ -22,6 +22,36 @@ export class LinkedList<T> implements ILinkedList<T> {
   add(value: T) {
     const node = new Node<T>(value)
 
+    if (this.tail === null) {
+      this.head = node
+      this.tail = node
+
+      return
+    }
+
+    this.tail.next = node
+    node.prev = this.tail
+    this.tail = node
+  }
+
+  remove() {
+    if (this.tail === null) {
+      return
+    }
+
+    if (this.tail === this.head) {
+      this.tail = null
+      this.head = null
+      return
+    }
+
+    this.tail = this.tail.prev
+    this.tail!.next = null
+  }
+
+  addFirst(value: T) {
+    const node = new Node<T>(value)
+
     if (this.head === null) {
       this.head = node
       this.tail = node
@@ -29,11 +59,23 @@ export class LinkedList<T> implements ILinkedList<T> {
       return
     }
 
-    if (this.tail !== null) {
-      this.tail.next = node
-      node.prev = this.tail
+    this.head.prev = node
+    node.next = this.head
+    this.head = node
+  }
+
+  removeFirst() {
+    if (this.head === null) {
+      return
     }
 
-    this.tail = node
+    if (this.tail === this.head) {
+      this.tail = null
+      this.head = null
+      return
+    }
+
+    this.head = this.head.next
+    this.head!.prev = null
   }
 }
