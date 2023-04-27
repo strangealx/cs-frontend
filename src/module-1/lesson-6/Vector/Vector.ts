@@ -92,6 +92,10 @@ export class Vector {
     const index = length - 1
     const output = this.#buffer[index]
 
+    if (length === 0) {
+      return undefined
+    }
+
     this.#buffer[index] = 0
     this.#size -= 1
 
@@ -101,6 +105,10 @@ export class Vector {
   shift() {
     const { length } = this
     const output = this.#buffer.at(0)
+
+    if (length === 0) {
+      return undefined
+    }
 
     for (let i = 1; i < length; i += 1) {
       this.#buffer[i - 1] = this.#buffer[i]
