@@ -72,7 +72,7 @@ describe('HashMap', () => {
       const input = new Array(10).fill(0).map((_, index) => ({ key: index, value: index }))
       let counter = 0
       let check: typeof input = []
-  
+
       input.forEach(({ key, value }) => map.set(key, value))
 
       for (const [key, value] of map) {
@@ -104,7 +104,7 @@ describe('HashMap', () => {
       map.set(nextInput.key, nextInput.value)
 
       expect(map.capacity).toBe(size * 2)
-      ;([...startInput, nextInput]).forEach(({ key, value }) => expect(map.get(key)).toBe(value))
+      ;[...startInput, nextInput].forEach(({ key, value }) => expect(map.get(key)).toBe(value))
     })
   })
 })

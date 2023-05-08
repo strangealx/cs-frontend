@@ -12,9 +12,9 @@ export class Hasher implements IHasher {
 
   #stringToHash(key: string) {
     const hash = key.split('').reduce((carry, char) => {
-      carry = ((carry << 5) - carry) + char.charCodeAt(0)
+      carry = (carry << 5) - carry + char.charCodeAt(0)
       return carry & carry
-    }, 0);
+    }, 0)
 
     return this.#numberToHash(hash)
   }
@@ -29,10 +29,10 @@ export class Hasher implements IHasher {
         enumerable: false,
         configurable: false,
         writable: false,
-        value: getRandomInt(0, Number.MAX_SAFE_INTEGER)
+        value: getRandomInt(0, Number.MAX_SAFE_INTEGER),
       })
     }
-  
+
     return this.#numberToHash(key[hashCode]!)
   }
 

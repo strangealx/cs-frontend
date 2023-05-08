@@ -23,7 +23,7 @@ export class Matrix3D<T> {
 
   #assertCoords({ x, y, z }: Coords) {
     const { x: xSize, y: ySize, z: zSize } = this.#size
-  
+
     if (x >= xSize || y >= ySize || z >= zSize) {
       throw new Error('Passed coords are out of bounds')
     }

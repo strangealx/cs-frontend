@@ -81,7 +81,7 @@ export class LinkedList<T> implements ILinkedList<T> {
 
   removeByIndex(index: number) {
     let current = this.head
-    let counter = 0 
+    let counter = 0
 
     if (index === 0) {
       this.removeFirst()
@@ -110,7 +110,7 @@ export class LinkedList<T> implements ILinkedList<T> {
 
   addByIndex(index: number, value: T) {
     let current = this.head
-    let counter = 0 
+    let counter = 0
 
     if (index === 0) {
       this.addFirst(value)
@@ -118,7 +118,7 @@ export class LinkedList<T> implements ILinkedList<T> {
     }
 
     while (current && counter <= index) {
-      if (counter === index) {    
+      if (counter === index) {
         const insert = new Node(value)
 
         insert.next = current

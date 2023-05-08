@@ -17,7 +17,7 @@ describe('Matrix3D', () => {
     })
 
     test('should set/get correct value', () => {
-      const coords = { x: 3, y: 3, z: 10}
+      const coords = { x: 3, y: 3, z: 10 }
       const input = 10
 
       matrix.set(coords, input)
@@ -26,14 +26,14 @@ describe('Matrix3D', () => {
     })
 
     test('should throw on out of range coords', () => {
-      const coords = { x: 17, y: 3, z: 10}
+      const coords = { x: 17, y: 3, z: 10 }
       const input = 10
 
       expect(() => matrix.set(coords, input)).toThrowError('Passed coords are out of bounds')
     })
 
     test('should throw if one of coords is negative', () => {
-      const coords = { x: -1, y: 3, z: 10}
+      const coords = { x: -1, y: 3, z: 10 }
       const input = 10
 
       expect(() => matrix.set(coords, input)).toThrowError('Invalid coords')
@@ -42,7 +42,7 @@ describe('Matrix3D', () => {
     test('should return correct matrix view', () => {
       const size = { x: 2, y: 2, z: 2 }
       const matrix = new Matrix3D(size)
-  
+
       matrix.set({ x: 0, y: 0, z: 0 }, 1)
       matrix.set({ x: 1, y: 0, z: 0 }, 2)
       matrix.set({ x: 0, y: 1, z: 0 }, 3)

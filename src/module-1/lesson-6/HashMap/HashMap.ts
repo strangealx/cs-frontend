@@ -58,7 +58,7 @@ export class HashMap<T> {
     if (!list) {
       this.#buffer[hash] = new IterableLinkedList<[TKey, T]>()
       list = this.#buffer[hash]
-    }  
+    }
 
     for (const [record] of list) {
       const [listKey] = record

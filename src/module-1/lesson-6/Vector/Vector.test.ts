@@ -88,7 +88,7 @@ describe('Vector', () => {
       const initialCapacity = 1024
       const nextCapacity = Math.ceil(initialCapacity + initialCapacity / 4)
       const input = new Array(initialCapacity).fill(1)
-      
+
       vector.push(...input)
       expect(vector.capacity).toBe(initialCapacity)
 
