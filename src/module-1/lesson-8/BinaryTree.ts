@@ -1,6 +1,5 @@
 import { IBinaryTreeNode } from './types'
 
-
 class BinaryTreeNode<T> implements IBinaryTreeNode<T> {
   value: T
   parent: IBinaryTreeNode<T> | null
@@ -24,7 +23,7 @@ export class BinaryTree<T> {
 
   #add(node: IBinaryTreeNode<T>, addedNode: IBinaryTreeNode<T>) {
     const key = addedNode.value < node.value ? 'left' : 'right'
-    
+
     if (node[key] === null) {
       addedNode.parent = node
       node[key] = addedNode
@@ -89,11 +88,11 @@ export class BinaryTree<T> {
     if (node === null) {
       return null
     }
-    
+
     if (value > node.value) {
       return this.find(value, node.right)
     }
-    
+
     if (value < node.value) {
       return this.find(value, node.left)
     }
@@ -119,7 +118,7 @@ export class BinaryTree<T> {
     if (found.left && found.right) {
       const replacer = this.findMin(found.right)
       const nextValue = replacer.value
-  
+
       found.value = nextValue
       this.remove(nextValue, found.right)
 

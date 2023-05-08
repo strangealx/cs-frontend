@@ -4,14 +4,14 @@ describe('bisecLeft', () => {
   test('should return correct index of an element', () => {
     const search = 7
     const input = [1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 8, 9]
-    
+
     expect(bisecLeft(input, (el) => el - search)).toBe(6)
   })
 
   test('should return 0 if all elements are equal end equals search', () => {
     const search = 7
     const input = new Array(10).fill(search)
-    
+
     expect(bisecLeft(input, (el) => el - search)).toBe(0)
   })
 
@@ -36,14 +36,14 @@ describe('bisecRight', () => {
   test('should return correct index of an element', () => {
     const search = 7
     const input = [1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 8, 9]
-    
+
     expect(bisecRight(input, (el) => el - search)).toBe(9)
   })
 
   test('should return 0 if all elements are equal end equals search', () => {
     const search = 7
     const input = new Array(10).fill(search)
-    
+
     expect(bisecRight(input, (el) => el - search)).toBe(input.length - 1)
   })
 

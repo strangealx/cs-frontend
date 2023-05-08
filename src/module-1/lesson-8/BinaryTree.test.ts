@@ -7,7 +7,7 @@ describe('BinaryTree', () => {
 
     beforeEach(() => {
       tree = new BinaryTree(10)
-      
+
       input.forEach((value) => tree.add(value))
     })
 
@@ -31,7 +31,7 @@ describe('BinaryTree', () => {
 
     test('should traverse tree post-order', () => {
       const output: number[] = []
-      const expected = [3, 7, 6 , 1, 22, 26, 16, 11, 10]
+      const expected = [3, 7, 6, 1, 22, 26, 16, 11, 10]
 
       tree.postOrderTraverse((value) => output.push(value))
 
