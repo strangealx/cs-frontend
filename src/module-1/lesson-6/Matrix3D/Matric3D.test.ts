@@ -38,5 +38,22 @@ describe('Matrix3D', () => {
 
       expect(() => matrix.set(coords, input)).toThrowError('Invalid coords')
     })
+
+    test('should return correct matrix view', () => {
+      const size = { x: 2, y: 2, z: 2 }
+      const matrix = new Matrix3D(size)
+  
+      matrix.set({ x: 0, y: 0, z: 0 }, 1)
+      matrix.set({ x: 1, y: 0, z: 0 }, 2)
+      matrix.set({ x: 0, y: 1, z: 0 }, 3)
+      matrix.set({ x: 1, y: 1, z: 0 }, 4)
+
+      matrix.set({ x: 0, y: 0, z: 1 }, 5)
+      matrix.set({ x: 1, y: 0, z: 1 }, 6)
+      matrix.set({ x: 0, y: 1, z: 1 }, 7)
+      matrix.set({ x: 1, y: 1, z: 1 }, 8)
+
+      expect(matrix.view).toEqual(new Array(size.x * size.y * size.z).fill(0).map((_, index) => index + 1))
+    })
   })
 })

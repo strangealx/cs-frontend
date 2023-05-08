@@ -11,6 +11,10 @@ export class Matrix3D<T> {
     this.#matrix = new Array(x * y * z)
   }
 
+  get view() {
+    return this.#matrix
+  }
+
   #transformCoordsToIndex({ x, y, z }: Coords) {
     const { x: xSize, y: ySize } = this.#size
 
