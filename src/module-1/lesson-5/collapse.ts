@@ -6,7 +6,7 @@ export const collapseRecursively = (obj: Source, path: string[] = [], output: Re
     output[path.join('.')] = obj
     return output
   }
-  
+
   Object.keys(obj).forEach((key) => {
     collapseRecursively((obj as Record<string, Source>)[key], [...path, key], output)
   })

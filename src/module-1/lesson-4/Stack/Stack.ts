@@ -1,4 +1,5 @@
-import { IStack, TypedArray } from './types'
+import { TypedArray } from '../../../common'
+import { IStack } from './types'
 
 export class Stack implements IStack {
   protected stack: InstanceType<TypedArray>

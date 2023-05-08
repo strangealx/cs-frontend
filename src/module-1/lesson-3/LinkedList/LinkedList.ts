@@ -78,4 +78,61 @@ export class LinkedList<T> implements ILinkedList<T> {
     this.head = this.head.next
     this.head!.prev = null
   }
+
+  removeByIndex(index: number) {
+    let current = this.head
+    let counter = 0
+
+    if (index === 0) {
+      this.removeFirst()
+      return
+    }
+
+    while (current && counter <= index) {
+      if (counter === index) {
+        if (current.next === null) {
+          this.remove()
+          return
+        }
+
+        current.prev!.next = current.next
+        current.next!.prev = current.prev
+
+        return
+      }
+
+      current = current.next
+      counter += 1
+    }
+
+    throw new Error('Out of bounds of list. Use "remove" method instead')
+  }
+
+  addByIndex(index: number, value: T) {
+    let current = this.head
+    let counter = 0
+
+    if (index === 0) {
+      this.addFirst(value)
+      return
+    }
+
+    while (current && counter <= index) {
+      if (counter === index) {
+        const insert = new Node(value)
+
+        insert.next = current
+        insert.prev = current.prev
+        current.prev!.next = insert
+        current.prev = insert
+
+        return
+      }
+
+      current = current.next
+      counter += 1
+    }
+
+    throw new Error('Out of bounds of list. Use "add" method instead')
+  }
 }

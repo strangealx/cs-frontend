@@ -22,15 +22,17 @@ describe('LinkedList', () => {
 
     test('should iterate over all values', () => {
       const input = [1, 2, 3, 4]
-      let index = 0
+      let counter = 0
 
       input.forEach((value) => list.add(value))
 
       expect(list[Symbol.iterator]).toEqual(expect.any(Function))
 
-      for (const value of list) {
-        expect(value).toEqual(input[index])
-        index += 1
+      for (const [value, index] of list) {
+        expect(value).toEqual(input[counter])
+        expect(index).toEqual(counter)
+
+        counter += 1
       }
     })
   })
