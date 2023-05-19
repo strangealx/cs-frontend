@@ -1,6 +1,5 @@
 import { bisecLeft } from '../../common'
-
-type TRange = [number, number]
+import { TRange } from './types'
 
 const DIGIT_RANGES: Array<TRange> = [
   [0x30, 0x39], // BASIC
@@ -12,17 +11,19 @@ const DIGIT_RANGES: Array<TRange> = [
   [0xa830, 0xa839], // INDIC
 ]
 
-const createComparator = (code: number) => ([startCode, endCode]: TRange) => {
-  if (code < startCode) {
-    return 1
-  }
+const createComparator =
+  (code: number) =>
+  ([startCode, endCode]: TRange) => {
+    if (code < startCode) {
+      return 1
+    }
 
-  if (code > endCode) {
-    return -1
-  }
+    if (code > endCode) {
+      return -1
+    }
 
-  return 0
-}
+    return 0
+  }
 
 export const isDigit = (input: string): boolean => {
   if (!input.length) {

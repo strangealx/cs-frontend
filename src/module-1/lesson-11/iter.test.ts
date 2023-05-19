@@ -1,16 +1,30 @@
 import { iter } from './iter'
 
 describe('iter', () => {
-  test('should correctly iterate over surrogate pairs', () => {
+  test('should correctly handle surrogate pairs', () => {
     const input = '😀'
-    const output =  ['😀']
+    const output = ['😀']
 
     expect([...iter(input)]).toEqual(output)
   })
 
-  test('should correctly iterate over surrogate pairs with joiners and modifiers', () => {
-    const input = '1😃à🇷🇺👩🏽‍❤️‍💋‍👨'
-    const output = ['1', '😃', 'à', '🇷🇺', '👩🏽‍❤️‍💋‍👨']
+  test('should correctly handle regional surrogate pairs', () => {
+    const input = '🇷🇺'
+    const output = ['🇷🇺']
+
+    expect([...iter(input)]).toEqual(output)
+  })
+
+  test('should correctly handle diacritical symbols', () => {
+    const input = 'à'
+    const output = ['à']
+
+    expect([...iter(input)]).toEqual(output)
+  })
+
+  test('should correctly handle mixed string', () => {
+    const input = '1😃à🇷🇺👩🏽‍❤️‍💋‍👨1'
+    const output = ['1', '😃', 'à', '🇷🇺', '👩🏽‍❤️‍💋‍👨', '1']
 
     expect([...iter(input)]).toEqual(output)
   })
