@@ -16,13 +16,15 @@ class BinaryTreeNode<T> implements IBinaryTreeNode<T> {
 
 export class BinaryTree<T> {
   #root: IBinaryTreeNode<T>
+  #comparator: (a: T, b: T) => number
 
-  constructor(value: T) {
+  constructor(value: T, comparator: (a: T, b: T) => number) {
     this.#root = new BinaryTreeNode(value)
+    this.#comparator = comparator
   }
 
   #add(node: IBinaryTreeNode<T>, addedNode: IBinaryTreeNode<T>) {
-    const key = addedNode.value < node.value ? 'left' : 'right'
+    const key = this.#comparator(addedNode.value, node.value) < 0 ? 'left' : 'right'
 
     if (node[key] === null) {
       addedNode.parent = node
@@ -89,11 +91,13 @@ export class BinaryTree<T> {
       return null
     }
 
-    if (value > node.value) {
+    const compare = this.#comparator(value, node.value)
+
+    if (compare > 0) {
       return this.find(value, node.right)
     }
 
-    if (value < node.value) {
+    if (compare < 0) {
       return this.find(value, node.left)
     }
 

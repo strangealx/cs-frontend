@@ -6,7 +6,7 @@ describe('BinaryTree', () => {
     let tree: BinaryTree<number>
 
     beforeEach(() => {
-      tree = new BinaryTree(10)
+      tree = new BinaryTree(10, (a, b) => a - b)
 
       input.forEach((value) => tree.add(value))
     })
