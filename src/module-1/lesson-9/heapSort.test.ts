@@ -7,7 +7,7 @@ describe('sort', () => {
     const output = [...input].sort(comparator)
 
     sort(input, comparator)
-    
+
     expect(input).toEqual(output)
   })
 })
