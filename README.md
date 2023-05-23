@@ -2,7 +2,8 @@
 
 ### TODO:
 - [Module 1, task 7 (graph)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-7)
-- [Module 1, task 12 (Trie)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-11)
+- [Module 1, task 12 (Trie)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-12)
+- [Module 1, task 13 (Regular expressions)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-13)
 
 ### DONE
 - [Module 1, task 1 (bits)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-1)
