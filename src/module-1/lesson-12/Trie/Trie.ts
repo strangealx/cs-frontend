@@ -13,19 +13,21 @@ export class Trie {
   tree: TTrieNode[]
 
   constructor() {
-    this.tree = [{
-      parent: null,
-      value: null,
-      children: {},
-      go: {},
-      isWord: false,
-      link: null
-    }]
+    this.tree = [
+      {
+        parent: null,
+        value: null,
+        children: {},
+        go: {},
+        isWord: false,
+        link: null,
+      },
+    ]
   }
 
   #go(char: string, index = 0) {
     const { tree } = this
-    
+
     if (!tree[index] || !tree[index].children[char]) {
       return null
     }
@@ -34,7 +36,7 @@ export class Trie {
 
     return {
       go: (char: string) => this.#go(char, nextIndex),
-      isWord: () => tree[nextIndex].isWord
+      isWord: () => tree[nextIndex].isWord,
     }
   }
 
@@ -76,10 +78,10 @@ export class Trie {
     const { tree } = this
     const chars = [...word]
     let nodeIndex = 0
-        
+
     for (let i = 0; i < chars.length; i += 1) {
       const char = chars[i]
-      let nextNodeIndex = tree[nodeIndex].children[char] 
+      let nextNodeIndex = tree[nodeIndex].children[char]
 
       if (nextNodeIndex === undefined) {
         const nextNode = {
@@ -88,9 +90,9 @@ export class Trie {
           children: {},
           go: {},
           isWord: false,
-          link: null
+          link: null,
         }
-        
+
         nextNodeIndex = tree.push(nextNode) - 1
         tree[nodeIndex].children[char] = nextNodeIndex
       }
@@ -105,10 +107,10 @@ export class Trie {
     const { tree } = this
     const chars = [...word]
     let nodeIndex = 0
-        
+
     for (let i = 0; i < chars.length; i += 1) {
       const char = chars[i]
-      let nextNodeIndex = tree[nodeIndex].children[char] 
+      let nextNodeIndex = tree[nodeIndex].children[char]
 
       if (nextNodeIndex === undefined) {
         return false
