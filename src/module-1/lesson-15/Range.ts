@@ -22,7 +22,6 @@ export class Range implements Iterable<TRangeItem> {
     const diff = (endSymbol - startSymbol) * modifier
     let counter = 0
 
-
     return {
       [Symbol.iterator]() {
         return this
@@ -43,6 +42,6 @@ export class Range implements Iterable<TRangeItem> {
   }
 
   reverse() {
-    return new Range(...this.#range.reverse() as TRange)
+    return new Range(...(this.#range.reverse() as TRange))
   }
 }
