@@ -9,7 +9,7 @@ export class Range implements Iterable<TRangeItem> {
     const [start, end] = range
     const isReversed = start > end
 
-    this.#range = range
+    this.#range = [start, end]
     this.#modifier = isReversed ? -1 : 1
   }
 
