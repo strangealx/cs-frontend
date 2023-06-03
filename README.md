@@ -2,6 +2,7 @@
 
 ### TODO:
 - [Module 1, task 7 (graph)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-7)
+- [Module 1, task 15 (Iterators, iterables)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-15)
 
 ### DONE
 - [Module 1, task 1 (bits)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-1)
