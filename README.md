@@ -2,6 +2,9 @@
 
 ### TODO:
 - [Module 1, task 7 (graph)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-7)
+- [Module 1, task 17 (Generators, machines, parsers)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-17)
+- [Module 1, task 19 (Errors, exceptions, containers)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-19)
+- [Module 1, task 20 (FP, monades, functors](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-20)
 
 ### DONE
 - [Module 1, task 1 (bits)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-1)
