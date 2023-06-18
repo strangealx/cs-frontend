@@ -12,7 +12,7 @@ export const mapSeq = <T>(iter: Iterable<T>, funcs: Iterable<(el: T) => T>): Ite
       if (next.done) {
         return next
       }
-    
+
       for (const f of funcs) {
         output = f(output)
       }
