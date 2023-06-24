@@ -14,7 +14,9 @@ describe('exec', () => {
   test('should handle Result error like async/await', () => {
     exec(function* () {
       try {
-        const res = yield new Result(() => { throw new Error('test')})
+        const res = yield new Result(() => {
+          throw new Error('test')
+        })
 
         return res
       } catch (err) {

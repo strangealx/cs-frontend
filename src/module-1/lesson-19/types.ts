@@ -1,4 +1,4 @@
 export enum EResultState {
   Ok,
-  Error
+  Error,
 }
