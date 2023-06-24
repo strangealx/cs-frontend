@@ -11,17 +11,15 @@ export const exec = <T>(fn: () => Generator<T | Result<T>, T, unknown>): Result<
 
     const value = new Result(() => chunk.value)
 
-    return value
-      .then(process)
-      .catch((error) => {
-        const chunk = iter.throw(error)
+    return value.then(process).catch((error) => {
+      const chunk = iter.throw(error)
 
-        if (chunk.done) {
-          return new Result(() => chunk.value)
-        }
+      if (chunk.done) {
+        return new Result(() => chunk.value)
+      }
 
-        return process(chunk.value)
-      })
+      return process(chunk.value)
+    })
   }
 
   return process()

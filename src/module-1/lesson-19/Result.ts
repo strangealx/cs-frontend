@@ -10,9 +10,7 @@ export class Result<T> {
       const result = fn()
 
       if (result instanceof Result) {
-        result
-          .then(this.#handleOk.bind(this))
-          .catch(this.#handleError.bind(this))
+        result.then(this.#handleOk.bind(this)).catch(this.#handleError.bind(this))
 
         return
       }
@@ -30,7 +28,7 @@ export class Result<T> {
 
   #handleError(error: unknown) {
     this.#error = error
-      this.#state = EResultState.Error
+    this.#state = EResultState.Error
   }
 
   then<R>(cb: (data: T | null) => R | Result<R>): Result<R> | this {

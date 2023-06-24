@@ -1,4 +1,3 @@
-
 import { Result } from './Result'
 
 describe('Result', () => {
@@ -42,9 +41,7 @@ describe('Result', () => {
     const res = new Result(success)
     const cb = jest.fn()
 
-    res
-      .then((r) => new Result(() => Number(r)))
-      .then(cb)
+    res.then((r) => new Result(() => Number(r))).then(cb)
 
     expect(success).toBeCalled()
     expect(cb).toBeCalledWith(successResult)
