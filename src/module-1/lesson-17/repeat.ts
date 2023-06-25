@@ -2,7 +2,7 @@ import { intoIterableIterator, intoIterableIteratorWithBuffer } from './helpers'
 import { EParserType, TParser } from './types'
 import { iterTools } from '../../common'
 
-export const repeat = (parser: TParser, options?: { min?: number, max?: number }): TParser => {
+export const repeat = (parser: TParser, options?: { min?: number; max?: number }): TParser => {
   const { min = 1, max = Infinity } = options || {}
 
   return function* (source) {

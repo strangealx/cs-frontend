@@ -9,7 +9,6 @@ export const tag = (input: string): TParser =>
       const [char, nextIter] = yield* handleNextChar(iter)
       iter = nextIter
 
-
       if (search !== char) {
         throw new Error(`Source string does not include specified tag: "${input}", but "${char}"`)
       }
