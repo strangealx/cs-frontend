@@ -4,6 +4,7 @@
 - [Module 1, task 7 (graph)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-7)
 - [Module 1, task 20 (FP, monades, functors)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-20)
 - [Module 1, task 21 (Currying, compose)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-21)
+- [Module 1, task 22 (Promises)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-22)
 
 ### DONE
 - [Module 1, task 1 (bits)](https://github.com/strangealx/cs-frontend/tree/master/src/module-1/lesson-1)
